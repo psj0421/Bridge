@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bridge — Your Church Code</title>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Inter:wght@600&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #bdfffc;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .page {
+            width: 1440px;
+            max-width: 100%;
+            min-height: 1024px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* 로고 */
+        .logo {
+            position: absolute;
+            top: 11px;
+            left: 13px;
+            font-family: 'Italiana', serif;
+            font-size: 48px;
+            font-weight: 400;
+            letter-spacing: -0.96px;
+            line-height: 1.2;
+            color: #000;
+        }
+
+        /* 타이틀 */
+        .title {
+            position: absolute;
+            top: 101px;
+            left: 302px;
+            font-size: 96px;
+            font-weight: 600;
+            letter-spacing: -1.92px;
+            line-height: 1.2;
+            color: #000;
+            width: 993px;
+        }
+
+        /* 교회 코드 표시 */
+        .church-code {
+            position: absolute;
+            top: 477px;
+            left: 604px;
+            font-size: 36px;
+            font-weight: 600;
+            letter-spacing: -0.72px;
+            line-height: 1.2;
+            color: rgba(0, 0, 0, 0.32);
+        }
+
+        /* Login 버튼 */
+        .login-btn {
+            position: absolute;
+            top: 931px;
+            left: 1284px;
+            width: 134px;
+            height: 61px;
+            background: #000;
+            border: none;
+            border-radius: 30px;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.48px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: background 0.15s;
+        }
+
+        .login-btn:hover { background: #333; }
+    </style>
+</head>
+<body>
+
+<div class="page">
+
+    <h1 class="logo">Bridge</h1>
+
+    <h2 class="title">Your Church Code</h2>
+
+    <p class="church-code">123456789</p>
+
+    <a class="login-btn" href="login.html">Login</a>
+
+</div>
+
+</body>
+</html>

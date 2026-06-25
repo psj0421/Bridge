@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bridge — Peoples</title>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #fff;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .header {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            height: 135px;
+            background: #f5f5f5;
+            border-bottom: 2px solid #000;
+            border-right: 2px solid #000;
+            border-top: 2px solid #000;
+            border-radius: 0 20px 0 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+        }
+
+        .header-title {
+            font-size: 64px;
+            font-weight: 600;
+            letter-spacing: -1.28px;
+            color: #000;
+        }
+
+        .page {
+            width: 1440px;
+            max-width: 100%;
+            margin: 0 auto;
+            position: relative;
+            min-height: 1080px;
+        }
+
+        .btn-edit {
+            position: absolute;
+            top: 197px;
+            left: 1295px;
+            width: 100px;
+            height: 40px;
+            background: #d9d9d9;
+            border: 1.5px solid #000;
+            border-radius: 20px;
+            font-size: 20px;
+            font-weight: 600;
+            color: #000;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 프로필 박스 */
+        .profile-box {
+            position: absolute;
+            top: 267px;
+            left: 75px;
+            width: 680px;
+            height: 266px;
+            border: 1px solid #000;
+            border-radius: 20px;
+            background: #fff;
+            padding: 18px 20px;
+            overflow: hidden;
+        }
+
+        .profile-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .profile-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .profile-join {
+            font-size: 18px;
+            font-weight: 600;
+            color: #808080;
+        }
+
+        .profile-divider {
+            height: 1px;
+            background: #e0e0e0;
+            margin-bottom: 8px;
+        }
+
+        .profile-body {
+            display: flex;
+            gap: 20px;
+            margin-top: 8px;
+        }
+
+        .profile-img {
+            width: 110px;
+            height: 130px;
+            border-radius: 10px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding-top: 8px;
+        }
+
+        .profile-name {
+            font-size: 24px;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .profile-detail {
+            font-size: 16px;
+            color: #4d4d4d;
+        }
+
+        .profile-detail span {
+            font-weight: 600;
+            color: #808080;
+            margin-right: 6px;
+        }
+
+        /* 주소 박스 */
+        .addr-box {
+            position: absolute;
+            top: 267px;
+            left: 775px;
+            width: 625px;
+            height: 130px;
+            border: 1px solid #000;
+            border-radius: 20px;
+            background: #fff;
+        }
+
+        .addr-label {
+            position: absolute;
+            top: 283px;
+            left: 795px;
+            font-size: 22px;
+            font-weight: 600;
+            color: #808080;
+        }
+
+        .addr-value {
+            position: absolute;
+            top: 319px;
+            left: 795px;
+            font-size: 22px;
+            font-weight: 400;
+            color: #404040;
+        }
+
+        /* 직업 박스 */
+        .job-box {
+            position: absolute;
+            top: 417px;
+            left: 775px;
+            width: 625px;
+            height: 130px;
+            border: 1px solid #000;
+            border-radius: 20px;
+            background: #fff;
+        }
+
+        .job-label {
+            position: absolute;
+            top: 433px;
+            left: 795px;
+            font-size: 22px;
+            font-weight: 600;
+            color: #808080;
+        }
+
+        .job-value {
+            position: absolute;
+            top: 469px;
+            left: 795px;
+            font-size: 22px;
+            font-weight: 400;
+            color: #404040;
+        }
+
+        .job-tag {
+            position: absolute;
+            top: 471px;
+            left: 888px;
+            font-size: 22px;
+            font-weight: 600;
+            color: #ffeb7b;
+        }
+
+        /* 사역 정보 박스 */
+        .ministry-box {
+            position: absolute;
+            top: 567px;
+            left: 75px;
+            width: 680px;
+            height: 288px;
+            border: 1px solid #000;
+            border-radius: 20px;
+            background: #fff;
+        }
+
+        .ministry-title {
+            position: absolute;
+            top: 581px;
+            left: 95px;
+            font-size: 28px;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .ministry-divider {
+            position: absolute;
+            left: 95px;
+            width: 628px;
+            height: 1px;
+            background: #d9d9d9;
+        }
+
+        .d1 { top: 615px; }
+        .d2 { top: 695px; }
+        .d3 { top: 775px; }
+
+        .ministry-label {
+            position: absolute;
+            font-size: 18px;
+            font-weight: 600;
+            color: #808080;
+            left: 95px;
+        }
+
+        .ministry-value {
+            position: absolute;
+            font-size: 20px;
+            font-weight: 400;
+            color: #404040;
+            left: 235px;
+        }
+
+        .ml1 { top: 631px; } .mv1 { top: 629px; }
+        .ml2 { top: 711px; } .mv2 { top: 709px; }
+        .ml3 { top: 791px; } .mv3 { top: 789px; }
+
+        /* 면담 기록 박스 */
+        .counsel-box {
+            position: absolute;
+            top: 567px;
+            left: 775px;
+            width: 625px;
+            height: 288px;
+            border: 1px solid #000;
+            border-radius: 20px;
+            background: #fff;
+        }
+
+        .counsel-title {
+            position: absolute;
+            top: 585px;
+            left: 795px;
+            font-size: 22px;
+            font-weight: 600;
+            color: #3f3f3f;
+        }
+
+        .counsel-divider {
+            position: absolute;
+            top: 623px;
+            left: 795px;
+            width: 585px;
+            height: 1px;
+            background: #ccc;
+        }
+
+        .counsel-row {
+            position: absolute;
+            display: flex;
+            gap: 20px;
+        }
+
+        .cr1 { top: 639px; left: 795px; }
+        .cr2 { top: 685px; left: 795px; }
+        .cr3 { top: 731px; left: 795px; }
+
+        .counsel-date {
+            font-size: 16px;
+            font-weight: 600;
+            color: #808080;
+            width: 100px;
+            flex-shrink: 0;
+        }
+
+        .counsel-content {
+            font-size: 16px;
+            font-weight: 400;
+            color: #404040;
+        }
+
+        .btn-counsel {
+            position: absolute;
+            top: 582px;
+            left: 1284px;
+            width: 100px;
+            height: 30px;
+            background: #e0e0e0;
+            border: 1px solid #b3b3b3;
+            border-radius: 15px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #595959;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 1005px;
+            left: 1278px;
+            width: 102px;
+            height: 43px;
+            background: #000;
+            border: 2px solid #000;
+            border-radius: 30px;
+            color: #fff;
+            font-size: 32px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .back-btn:hover { background: #333; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1 class="header-title">Peoples</h1>
+</div>
+
+<div class="page">
+
+    <button class="btn-edit">수정</button>
+
+    <!-- 프로필 박스 -->
+    <div class="profile-box">
+        <div class="profile-top">
+            <p class="profile-title">프로필</p>
+            <p class="profile-join">가입일 2025.02.03</p>
+        </div>
+        <div class="profile-divider"></div>
+        <div class="profile-body">
+            <img class="profile-img" src="https://www.figma.com/api/mcp/asset/4d794891-8cad-4f49-9770-0cfee06ff01b" alt="프로필 사진" />
+            <div class="profile-info">
+                <p class="profile-name">최다선</p>
+                <p class="profile-detail"><span>전화 :</span>010-0000-0000</p>
+                <p class="profile-detail"><span>이메일 :</span>yodasunsang123@naver.com</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 주소 박스 -->
+    <div class="addr-box"></div>
+    <p class="addr-label">주소</p>
+    <p class="addr-value">경기도 안산시 123456</p>
+
+    <!-- 직업 박스 -->
+    <div class="job-box"></div>
+    <p class="job-label">직업</p>
+    <p class="job-value">고등학생</p>
+    <a class="job-tag" href="people_tag2.html" style="text-decoration:none;">#고등학생</a>
+
+    <!-- 사역 정보 박스 -->
+    <div class="ministry-box"></div>
+    <p class="ministry-title">사역 정보</p>
+    <div class="ministry-divider d1"></div>
+    <p class="ministry-label ml1">직분</p>
+    <p class="ministry-value mv1">학생</p>
+    <div class="ministry-divider d2"></div>
+    <p class="ministry-label ml2">부서</p>
+    <p class="ministry-value mv2">학생부</p>
+    <div class="ministry-divider d3"></div>
+    <p class="ministry-label ml3">역할</p>
+    <p class="ministry-value mv3">찬양팀(싱어) · 방송팀(음향) · 주보팀(ppt)</p>
+
+    <!-- 면담 기록 박스 -->
+    <div class="counsel-box"></div>
+    <p class="counsel-title">면담 기록</p>
+    <div class="counsel-divider"></div>
+    <div class="counsel-row cr1">
+        <span class="counsel-date">2025.02.10</span>
+        <span class="counsel-content">신앙 성장 점검</span>
+    </div>
+    <div class="counsel-row cr2">
+        <span class="counsel-date">2025.04.18</span>
+        <span class="counsel-content">학업 스트레스 나눔</span>
+    </div>
+    <div class="counsel-row cr3">
+        <span class="counsel-date">2025.06.05</span>
+        <span class="counsel-content">여름 수련회 준비</span>
+    </div>
+
+    <a class="btn-counsel" href="counsel_detail3.html">면담 페이지</a>
+    <a class="back-btn" href="people3.html">←</a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bridge — Admin Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Inter:wght@600&display=swap" rel="stylesheet" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #bdfffc; font-family: 'Inter', sans-serif; }
+
+        .page {
+            width: 1440px; max-width: 100%;
+            min-height: 1024px; margin: 0 auto; position: relative;
+        }
+
+        .logo {
+            position: absolute; top: 11px; left: 13px;
+            font-family: 'Italiana', serif; font-size: 48px;
+            font-weight: 400; letter-spacing: -0.96px; color: #000;
+        }
+
+        .title {
+            position: absolute; top: 99px; left: 413px;
+            font-size: 96px; font-weight: 600;
+            letter-spacing: -1.92px; color: #000; width: 633px;
+        }
+
+        .label {
+            position: absolute; font-size: 36px; font-weight: 600;
+            letter-spacing: -0.72px; color: #000;
+        }
+
+        .input-field {
+            position: absolute; height: 71px;
+            background: #fff; border: 2px solid #000; border-radius: 20px;
+            padding: 0 24px; font-family: 'Inter', sans-serif;
+            font-size: 24px; font-weight: 600; color: #000; outline: none;
+        }
+
+        .input-field::placeholder { color: rgba(0, 0, 0, 0.09); }
+        .input-field:focus { box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08); }
+
+        .label-name     { top: 339px; left: 124px; }
+        .input-name     { top: 407px; left: 176px; width: 350px; }
+
+        .label-dob      { top: 524px; left: 124px; }
+        .input-dob      { top: 588px; left: 181px; width: 350px; }
+
+        .label-phone    { top: 689px; left: 124px; }
+        .input-phone    { top: 755px; left: 181px; width: 350px; }
+
+        .label-email    { top: 339px; left: 752px; }
+        .input-email    { top: 407px; left: 814px; width: 569px; }
+
+        .label-password { top: 515px; left: 752px; }
+        .input-password { top: 583px; left: 811px; width: 470px; }
+
+        .label-confirm  { top: 691px; left: 752px; }
+        .input-confirm  { top: 755px; left: 814px; width: 470px; }
+
+        .back-btn {
+            position: absolute; top: 931px; left: 33px;
+            width: 134px; height: 61px; background: #000;
+            border: none; border-radius: 30px; color: #fff;
+            font-size: 28px; cursor: pointer; display: flex;
+            align-items: center; justify-content: center;
+            text-decoration: none; transition: background 0.15s;
+        }
+
+        .back-btn:hover { background: #333; }
+
+        .next-btn {
+            position: absolute; top: 931px; left: 1284px;
+            width: 134px; height: 61px; background: #000;
+            border: none; border-radius: 30px; color: #fff;
+            font-size: 28px; cursor: pointer; display: flex;
+            align-items: center; justify-content: center;
+            text-decoration: none; transition: background 0.15s;
+        }
+
+        .next-btn:hover { background: #333; }
+    </style>
+</head>
+<body>
+<div class="page">
+    <h1 class="logo">Bridge</h1>
+    <h2 class="title">Admin Profile</h2>
+
+    <label class="label label-name" for="name">Name(이름)</label>
+    <input class="input-field input-name" id="name" type="text" placeholder="Value" />
+
+    <label class="label label-dob" for="dob">DOB(생년월일)</label>
+    <input class="input-field input-dob" id="dob" type="text" placeholder="YYYY-MM-DD" />
+
+    <label class="label label-phone" for="phone">Phone Number(전화번호)</label>
+    <input class="input-field input-phone" id="phone" type="text" placeholder="010-0000-0000" />
+
+    <label class="label label-email" for="email">Email / ID(이메일/아이디)</label>
+    <input class="input-field input-email" id="email" type="email" placeholder="Value" />
+
+    <label class="label label-password" for="password">Password(비밀번호)</label>
+    <input class="input-field input-password" id="password" type="password" placeholder="Value" />
+
+    <label class="label label-confirm" for="confirm">Confirm Password(비밀번호 확인)</label>
+    <input class="input-field input-confirm" id="confirm" type="password" placeholder="Value" />
+
+    <a class="back-btn" href="signup_admin.html">←</a>
+    <a class="next-btn" href="welcome.html">→</a>
+
+</div>
+</body>
+</html>
