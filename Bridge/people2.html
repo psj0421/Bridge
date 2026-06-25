@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bridge — Peoples</title>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #fff;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .header {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            height: 135px;
+            background: #f5f5f5;
+            border-bottom: 2px solid #000;
+            border-right: 2px solid #000;
+            border-top: 2px solid #000;
+            border-radius: 0 20px 0 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+        }
+
+        .header-title {
+            font-size: 64px;
+            font-weight: 600;
+            letter-spacing: -1.28px;
+            color: #000;
+        }
+
+        .page {
+            width: 1440px;
+            max-width: 100%;
+            margin: 0 auto;
+            position: relative;
+            min-height: 1080px;
+        }
+
+        /* 청년부 박스 */
+        .dept-box-1 {
+            position: absolute;
+            top: 174px;
+            left: 105px;
+            width: 148px;
+            height: 44px;
+            background: #fff;
+            border: 1px solid #000;
+        }
+
+        .dept-text-1 {
+            position: absolute;
+            top: 182px;
+            left: 121px;
+            font-size: 24px;
+            font-weight: 600;
+            color: #000;
+        }
+
+        /* 학생부 박스 */
+        .dept-box-2 {
+            position: absolute;
+            top: 218px;
+            left: 105px;
+            width: 148px;
+            height: 44px;
+            background: #fff;
+            border: 1px solid #000;
+        }
+
+        .dept-text-2 {
+            position: absolute;
+            top: 226px;
+            left: 121px;
+            font-size: 24px;
+            font-weight: 600;
+            color: #000;
+        }
+
+        /* 컬럼 헤더 */
+        .col-no    { position: absolute; top: 218px; left: 318px; font-size: 24px; font-weight: 600; letter-spacing: -0.48px; color: #000; }
+        .col-name  { position: absolute; top: 218px; left: 394px; font-size: 24px; font-weight: 600; letter-spacing: -0.48px; color: #000; }
+        .col-age   { position: absolute; top: 218px; left: 505px; font-size: 24px; font-weight: 600; letter-spacing: -0.48px; color: #000; }
+        .col-roles { position: absolute; top: 218px; left: 778px; font-size: 24px; font-weight: 600; letter-spacing: -0.48px; color: #000; }
+        .col-phone { position: absolute; top: 218px; left: 1034px; font-size: 24px; font-weight: 600; letter-spacing: -0.48px; color: #000; }
+
+        /* 행 박스 */
+        .row-box {
+            position: absolute;
+            width: 986px;
+            height: 62px;
+            left: 284px;
+            background: #fff;
+            border: 1px solid #000;
+            border-radius: 20px;
+        }
+
+        .row-1 { top: 258px; }
+        .row-2 { top: 365px; }
+        .row-3 { top: 472px; }
+        .row-4 { top: 579px; }
+        .row-5 { top: 686px; }
+        .row-6 { top: 793px; }
+
+        .cell {
+            position: absolute;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.48px;
+            color: #000;
+        }
+
+        .r1-no    { top: 274px; left: 326px; }
+        .r1-name  { top: 274px; left: 394px; }
+        .r1-age   { top: 273px; left: 509px; }
+        .r1-roles { top: 273px; left: 609px; }
+        .r1-phone { top: 272px; left: 1023px; }
+
+        .r2-no    { top: 381px; left: 322px; }
+        .r2-name  { top: 381px; left: 390px; }
+        .r2-age   { top: 380px; left: 505px; }
+        .r2-roles { top: 380px; left: 663px; }
+        .r2-phone { top: 379px; left: 1019px; }
+
+        .r3-no    { top: 488px; left: 322px; }
+        .r3-name  { top: 488px; left: 390px; }
+        .r3-age   { top: 487px; left: 505px; }
+        .r3-roles { top: 487px; left: 605px; }
+        .r3-phone { top: 486px; left: 1019px; }
+
+        .r4-no    { top: 595px; left: 322px; }
+        .r4-name  { top: 595px; left: 390px; }
+        .r4-age   { top: 594px; left: 505px; }
+        .r4-roles { top: 594px; left: 624px; }
+        .r4-phone { top: 593px; left: 1019px; }
+
+        .r5-no    { top: 702px; left: 322px; }
+        .r5-name  { top: 702px; left: 390px; }
+        .r5-age   { top: 701px; left: 505px; }
+        .r5-roles { top: 701px; left: 686px; }
+        .r5-phone { top: 700px; left: 1019px; }
+
+        .r6-no    { top: 809px; left: 322px; }
+        .r6-name  { top: 809px; left: 390px; }
+        .r6-age   { top: 808px; left: 505px; }
+        .r6-roles { top: 807px; left: 734px; }
+        .r6-phone { top: 807px; left: 1019px; }
+
+        /* 뒤로가기 버튼 */
+        .back-btn {
+            position: absolute;
+            top: 1005px;
+            left: 1278px;
+            width: 102px;
+            height: 43px;
+            background: #000;
+            border: 2px solid #000;
+            border-radius: 30px;
+            color: #fff;
+            font-size: 32px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .back-btn:hover { background: #333; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1 class="header-title">Peoples</h1>
+</div>
+
+<div class="page">
+
+    <!-- 부서 목록 -->
+    <a href="people.html" style="position:absolute; top:174px; left:105px; width:148px; height:44px; background:#fff; border:1px solid #000; display:flex; align-items:center; padding-left:16px; text-decoration:none;">
+        <span style="font-size:24px; font-weight:600; color:#000;">청년부</span>
+    </a>
+
+    <a href="people3.html" style="position:absolute; top:218px; left:105px; width:148px; height:44px; background:#fff; border:1px solid #000; display:flex; align-items:center; padding-left:16px; text-decoration:none;">
+        <span style="font-size:24px; font-weight:600; color:#000;">학생부</span>
+    </a>
+
+    <!-- 컬럼 헤더 -->
+    <span class="col-no">No.</span>
+    <span class="col-name">Name</span>
+    <span class="col-age">Age</span>
+    <span class="col-roles">Roles</span>
+    <span class="col-phone">Phone number</span>
+
+    <!-- 행 1 -->
+    <div class="row-box row-1"></div>
+    <span class="cell r1-no">1</span>
+    <a class="cell r1-name" href="people_detail.html" style="text-decoration:none; color:#000;">김도은</a>
+    <span class="cell r1-age">33</span>
+    <span class="cell r1-roles">관리간사 , 주일학교 교사 , 찬양팀(건반)</span>
+    <span class="cell r1-phone">010-0000-0000</span>
+
+    <!-- 행 2 -->
+    <div class="row-box row-2"></div>
+    <span class="cell r2-no">2</span>
+    <span class="cell r2-name">박찬영</span>
+    <span class="cell r2-age">22</span>
+    <span class="cell r2-roles">청년부 회장 , 방송팀(음향)</span>
+    <span class="cell r2-phone">010-0000-0000</span>
+
+    <!-- 행 3 -->
+    <div class="row-box row-3"></div>
+    <span class="cell r3-no">3</span>
+    <span class="cell r3-name">유하나</span>
+    <span class="cell r3-age">27</span>
+    <span class="cell r3-roles">음악간사 , 청년부 총무 , 방송팀(총괄)</span>
+    <span class="cell r3-phone">010-0000-0000</span>
+
+    <!-- 행 4 -->
+    <div class="row-box row-4"></div>
+    <span class="cell r4-no">4</span>
+    <span class="cell r4-name">김은진</span>
+    <span class="cell r4-age">25</span>
+    <span class="cell r4-roles">주일학교 교사 , 찬양팀(건반,싱어)</span>
+    <span class="cell r4-phone">010-0000-0000</span>
+
+    <!-- 행 5 -->
+    <div class="row-box row-5"></div>
+    <span class="cell r5-no">5</span>
+    <span class="cell r5-name">최희상</span>
+    <span class="cell r5-age">27</span>
+    <span class="cell r5-roles">청년부 서기 , 성가대</span>
+    <span class="cell r5-phone">010-0000-0000</span>
+
+    <!-- 행 6 -->
+    <div class="row-box row-6"></div>
+    <span class="cell r6-no">6</span>
+    <a class="cell r6-name" href="people_detail2.html" style="text-decoration:none; color:#000;">조다운</a>
+    <span class="cell r6-age">25</span>
+    <span class="cell r6-roles">차량팀(대형)</span>
+    <span class="cell r6-phone">010-0000-0000</span>
+
+    <!-- 뒤로가기 -->
+    <a class="back-btn" href="home.html">←</a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bridge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Inter:wght@600&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #bdfffc;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .page {
+            width: 1440px;
+            max-width: 100%;
+            min-height: 1024px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .logo {
+            position: absolute;
+            top: 112px;
+            left: 544px;
+            font-family: 'Italiana', serif;
+            font-size: 128px;
+            font-weight: 400;
+            letter-spacing: -2.56px;
+            line-height: 1.2;
+            color: #000;
+        }
+
+        .label {
+            position: absolute;
+            font-size: 36px;
+            font-weight: 600;
+            letter-spacing: -0.72px;
+            color: #000;
+        }
+
+        .input-field {
+            position: absolute;
+            width: 710px;
+            height: 71px;
+            left: 365px;
+            background: #fff;
+            border: 2px solid #000;
+            border-radius: 20px;
+            padding: 0 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: #000;
+            outline: none;
+        }
+
+        .input-field::placeholder {
+            color: rgba(0, 0, 0, 0.09);
+        }
+
+        .input-field:focus {
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+        }
+
+        .label-church { top: 321px; left: 336px; }
+        .input-church { top: 389px; }
+
+        .label-email { top: 512px; left: 336px; }
+        .input-email { top: 574px; }
+
+        .label-password { top: 697px; left: 338px; }
+        .input-password { top: 759px; }
+
+        .btn-signup {
+            position: absolute;
+            top: 870px;
+            left: 844px;
+            background: none;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.48px;
+            color: #000;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn-signup:hover { opacity: 0.6; }
+
+        .btn-login {
+            position: absolute;
+            top: 857px;
+            left: 941px;
+            width: 134px;
+            height: 61px;
+            background: #000;
+            border: none;
+            border-radius: 30px;
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.48px;
+            color: #fff;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-login:hover { background: #333; }
+
+        .forget-church {
+            position: absolute;
+            top: 982px;
+            left: 374px;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.48px;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .forget-id {
+            position: absolute;
+            top: 982px;
+            left: 693px;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.48px;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .forget-password {
+            position: absolute;
+            top: 982px;
+            left: 874px;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.48px;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .forget-church:hover,
+        .forget-id:hover,
+        .forget-password:hover { opacity: 0.6; }
+    </style>
+</head>
+<body>
+
+<div class="page">
+
+    <h1 class="logo">Bridge</h1>
+
+    <label class="label label-church" for="church-code">Church Code</label>
+    <input class="input-field input-church" id="church-code" type="text" placeholder="Value" />
+
+    <label class="label label-email" for="email">Email</label>
+    <input class="input-field input-email" id="email" type="email" placeholder="Value" />
+
+    <label class="label label-password" for="password">Password</label>
+    <input class="input-field input-password" id="password" type="password" placeholder="Value" />
+
+    <a class="btn-signup" href="signup.html">Sign up</a>
+    <a class="btn-login" href="home.html">Login</a>
+
+    <a class="forget-church" href="forget_church_code.html">Forget Church Code?</a>
+    <a class="forget-id" href="forget_id.html">Forget ID?</a>
+    <a class="forget-password" href="forget_password.html">Forget Password?</a>
+
+</div>
+
+</body>
+</html>
